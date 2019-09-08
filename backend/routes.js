@@ -83,4 +83,16 @@ routes.post('/registro', async (req, res) => {
     });
 });
 
+/** recebendo requisição de usuário para acessar login */
+routes.put('/registro', (req, res)=>{
+
+    registro.update(req.body.entrada, req.body.saidaAlmoco, req.body.retornoAlmoco, req.body.saida,  req.body.userID).then(results=>{
+         return  res.json({ ok: 'Atualizado!'});
+    }).catch(err => {
+ 
+         return res.json({nok: 'Erro ao autalizar', err});
+ 
+     });
+ });
+
 module.exports = routes;

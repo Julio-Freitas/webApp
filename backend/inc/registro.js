@@ -15,6 +15,7 @@ module.exports = {
                     let exist = Number(JSON.stringify(results.length));
                     if(exist >= 1){
                         resolve('nOk');
+                        //this.update()
                     }
                     else{
                         this.save();
@@ -24,7 +25,6 @@ module.exports = {
                 }
             });
         });
-
     },
 
 
@@ -48,6 +48,25 @@ module.exports = {
                 }
             })
         });
+    },
+
+    /** atualizando tabela */
+    update(entrada, saidaAlmoco,retornoAlmoco, saida, userID){
+        return new Promise((resolve, reject)=>{
+            conn.query('UPDATE tb_register SET entrada = ?, saidaAlmoco = ?, retornoAlmoco = ?, saida = ?  WHERE userID = ?',[
+                entrada,
+                saidaAlmoco,
+                retornoAlmoco,
+                saida,
+                userID
+            ], (err, results)=>{
+                if(err){
+                    reject(err);
+                }else{
+                    resolve(results); 
+                }
+            })
+        })
     }
 }
 
