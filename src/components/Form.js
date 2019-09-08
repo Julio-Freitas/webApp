@@ -63,8 +63,7 @@ useEffect(()=>{
             data,
             userID: parseInt(props.userID)
         }).then(results => {
-            //window.location.reload();
-            console.log(results)
+            window.location.reload();
         });
     }
 
