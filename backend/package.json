@@ -9,7 +9,7 @@
   "dependencies": {
     "connect-redis": "^4.0.2",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.16.2",
     "mysql2": "^1.7.0"
   },
